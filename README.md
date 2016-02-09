@@ -9,4 +9,13 @@ So, here is my attempt to make some other pretty plots
 # Online vs In-person teaching
 Here are a few plots show correlations showing how many in the newly trained instructors have taught at least one workshop.
 
+###This first one is all the data together. 
 
+![In Person vs Online](instructor-training-stats-2.png)
+
+###This one is broken down a little bit more for an indepth analysis of the effect of year
+
+![In Person vs Online by Year](instructor-training-stats-1.png)
+
+###Interpretation
+It looks to me like both in person and online training work equally well if the desired outcome is that new instructors teach at least 1 workshop. 
