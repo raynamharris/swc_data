@@ -1,5 +1,6 @@
 library(ggplot2)
 library(tidyr)
+library(dplyr)
 library(cowplot)
 
 #read in data; split date into year, month, day; add rows for 2012 & 2013 so plot colors are same 
@@ -37,3 +38,13 @@ i2 <- ggplot(inperson, aes(x=completed.this, y=taught.at.least.once, colour = fa
   theme(axis.text.x = element_text(angle=70, vjust=0.5)) +
   stat_smooth(method = "lm", col="Red")
 plot_grid(o1, i1, o2, i2, labels = c("      online", "      in-person", "      online", "      in-person"))
+ggsave("instructor-training-stats-1.png")
+
+require(cowplot)  
+all1 <- ggplot(instructors.split, aes(x=completed.this, y=taught.at.least.once, colour = factor (online))) + 
+  geom_point() + background_grid(major = "xy", minor = "none")  +
+  theme(axis.text.x = element_text(angle=70, vjust=0.5)) +
+  scale_colour_discrete(labels=c("in-person", "online")) +
+  stat_smooth(method = "lm") 
+all1
+ggsave("instructor-training-stats-2.png")
