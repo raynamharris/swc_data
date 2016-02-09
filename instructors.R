@@ -75,7 +75,7 @@ plotyear2015 <- ggplot(year2015, aes(x=badged.instructors, y=taught.at.least.onc
 
 #using cowplot to make a grid of plots
 plot_grid(all, all2, online.year, inperson.year, plotyear2014, plotyear2015, ncol=2, 
-          labels = c("    A. all learners", " B. all new instructors", 
-                     "C. online new instructors", "D. in-person new instructors",
-                     "       E. 2014", "        F. 2015"))
+          labels = c("    A1. Learners", " A2. Badged Instructors", 
+                     "B1. Badged Instructors - Online", "B2. Badged Instructors - In Person",
+                     "       C1. 2014", "        C2. 2015"))
 ggsave("instructor-training-stats-1.png")
